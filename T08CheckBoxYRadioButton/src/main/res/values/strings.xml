@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">Ejercices</string>
-    
-    <!-- Activity main -->
-        <!-- Menu layout -->
-        <string name="labelMenuTitle">CheckBox</string>
 
-        <!--  Main Layout  -->
-        <string name="labelMainPassword">Password</string>
-        <string name="buttonMainSend">Send</string>
+    <!-- Activity main -->
+    <!-- Menu layout -->
+    <string name="labelMenuTitle">CheckBox</string>
+
+    <!--  Main Layout  -->
+    <string name="labelMainPassword">Password</string>
+    <string name="checkBoxMainShowPassword">Show Password</string>
+    <string name="buttonMainSend">Send</string>
+
+    <!--  Checkbox activity layout  -->
+    <string name="labelCheckboxTitle">Where did you hear about us?</string>
 </resources>

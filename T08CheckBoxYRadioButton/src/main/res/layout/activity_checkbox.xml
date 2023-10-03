@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".CheckboxActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutCheckboxMenu"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="87dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
@@ -35,62 +34,66 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstraintLayout"
-        android:layout_width="409dp"
-        android:layout_height="166dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCheckboxMenu">
+        android:id="@+id/constraintLayoutCheckboxMain"
+        android:layout_width="410dp"
+        android:layout_height="337dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="89dp">
 
         <TextView
-            android:id="@+id/labelMainPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:labelFor="@id/editTextMainPassword"
-            android:text="@string/labelMainPassword"
-            app:layout_constraintStart_toStartOf="@+id/editTextMainPassword"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/editTextMainPassword"
+            android:id="@+id/labelCheckboxTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="7dp"
-            android:autofillHints="@string/labelMainPassword"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/labelCheckboxTitle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/labelMainPassword" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkBoxMainShowPassword"
+            android:id="@+id/checkBoxCheckBox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/checkBoxMainShowPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:text="CheckBox"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextMainPassword" />
+            tools:layout_editor_absoluteY="38dp" />
 
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="CheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="85dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="CheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="133dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="CheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="181dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="CheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="229dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonMainSend"
-        android:layout_width="170dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/buttonMainSend"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayout"
-        app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
-        app:strokeColor="#FFFFFF"
-        app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
