@@ -10,6 +10,23 @@
     <string name="checkBoxMainShowPassword">Show Password</string>
     <string name="buttonMainSend">Send</string>
 
-    <!--  Checkbox activity layout  -->
+    <!--  Checkbox activity menu  -->
     <string name="labelCheckboxTitle">Where did you hear about us?</string>
+
+    <!--  Checkbox activity main  -->
+    <string name="checkBoxCheckBox1">Tv</string>
+    <string name="checkBoxCheckBox2">Radio</string>
+    <string name="checkBoxCheckBox3">Newspaper</string>
+    <string name="checkBoxCheckBox4">A friend</string>
+    <string name="checkBoxCheckBox5">Others</string>
+    <string name="labelCheckBoxCheckBox5">Which others?</string>
+
+    <string name="buttonCheckboxSend">Next</string>
+
+    <!--  Radiobutton activity menu  -->
+    <string name="labelRadioButtonMenuTitle">RadioButton</string>
+
+    <!--  Radiobutton activity main  -->
+    <string name="labelRadioButtonTitle">Customer type</string>
+
 </resources>

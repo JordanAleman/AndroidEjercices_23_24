@@ -8,19 +8,19 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutCheckboxMenu"
+        android:id="@+id/constraintLayoutRadioButtonMenu"
         android:layout_width="409dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
         android:background="@color/blueMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/labelCheckboxMenuTitle"
+            android:id="@+id/labelRadioButtonMenuTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -31,51 +31,55 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.39" />
+            app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstraintLayout"
-        android:layout_width="409dp"
-        android:layout_height="166dp"
+        android:id="@+id/ConstraintLayoutMainMain"
+        android:layout_width="410dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCheckboxMenu">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutRadioButtonMenu">
 
         <TextView
             android:id="@+id/labelMainPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:labelFor="@id/editTextMainPassword"
             android:text="@string/labelMainPassword"
-            app:layout_constraintStart_toStartOf="@+id/editTextMainPassword"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextMainPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.242"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/editTextMainPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="7dp"
+            android:layout_width="254dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="16dp"
             android:autofillHints="@string/labelMainPassword"
             android:ems="10"
             android:inputType="textPassword"
             android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/checkBoxMainShowPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/labelMainPassword" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/checkBoxMainShowPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="38dp"
             android:text="@string/checkBoxMainShowPassword"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editTextMainPassword"
             app:layout_constraintTop_toBottomOf="@+id/editTextMainPassword" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -88,7 +92,7 @@
         android:text="@string/buttonMainSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutMainMain"
         app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
         app:strokeColor="#FFFFFF"
         app:strokeWidth="2dp" />
