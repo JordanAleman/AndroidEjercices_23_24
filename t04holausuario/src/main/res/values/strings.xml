@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">T04HolaUsuario</string>
+
+    <string name="textViewMainTitle">T04HolaUsuario</string>
+    <string name="textViewMainName">Escribe tu nombre</string>
+    <string name="buttonMainSendName">ACEPTAR</string>
+</resources>

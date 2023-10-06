@@ -115,14 +115,6 @@ public class MainActivity extends AppCompatActivity {
                     String opcionSeleccionada = ((Titular) a.getItemAtPosition(position)).getTitulo();
                     lblEtiqueta.setText("Opción seleccionada: " + opcionSeleccionada);
 
-
-//                    v.setBackgroundColor(Color.parseColor("#BA3620"));
-
-//                    LinearLayout linearLayoutList = v.findViewById(R.id.LinearLayoutList);
-//                    linearLayoutList.setBackgroundColor(Color.parseColor("#BA3620"));
-
-//
-
                 } catch (Exception e) {
                     lblEtiqueta.setVisibility(View.GONE);
                 }
@@ -141,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         lstOpciones2 = findViewById(R.id.LstOpciones2);
 
-        //    Cabecera2
+        // Cabecera2
         View header2 = getLayoutInflater().inflate(R.layout.list2_header, null);
         lstOpciones2.addHeaderView(header2);
 
