@@ -16,11 +16,11 @@
     <ListView
         android:id="@+id/LstOpciones"
         android:layout_width="match_parent"
-        android:layout_height="341dp" />
+        android:layout_height="365dp" />
 
     <ListView
         android:id="@+id/LstOpciones2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="359dp" />
 
 </LinearLayout>

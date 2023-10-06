@@ -17,6 +17,8 @@ package com.jordan.t10listview;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -52,12 +55,15 @@ public class MainActivity extends AppCompatActivity {
                     new Titular("Título 15", "Subtítulo largo 15")};
 
     private Titular[] datos2 = {new Titular("Prueba 1", "Subprueba 1"),
-                                new Titular("Prueba 2", "Subprueba 2")};
+            new Titular("Prueba 2", "Subprueba 2")};
+
+    private int posicionSeleccionada = -1; // Inicialmente ninguna vista está seleccionada
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         /*//Ejemplo básico
         final String[] datos =
@@ -73,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         lblEtiqueta = findViewById(R.id.LblEtiqueta);
         lstOpciones = findViewById(R.id.LstOpciones);
-        lstOpciones2 = findViewById(R.id.LstOpciones2);
+
 
         //Cabecera
         View header = getLayoutInflater().inflate(R.layout.list_header, null);
@@ -85,11 +91,24 @@ public class MainActivity extends AppCompatActivity {
 
         lstOpciones.setAdapter(adaptador);
 
+
         //Eventos
         lstOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 if (lblEtiqueta.getVisibility() == View.GONE)
                     lblEtiqueta.setVisibility(View.VISIBLE);
+
+                // Cambia el color de fondo de la vista seleccionada previamente a amarillo
+                if (posicionSeleccionada != -1) {
+                    View prevSeleccionada = lstOpciones.getChildAt(posicionSeleccionada);
+                    prevSeleccionada.setBackgroundColor(Color.parseColor("#FFE896"));
+                }
+
+                // Cambia el color de fondo de la vista seleccionada a rojo
+                v.setBackgroundColor(Color.parseColor("#FF0000"));
+
+                // Actualiza la posición seleccionada
+                posicionSeleccionada = position;
 
                 //Alternativa 1:
                 try { //por si pinchamos en la cabecera, que da excepcion
@@ -97,9 +116,15 @@ public class MainActivity extends AppCompatActivity {
                     lblEtiqueta.setText("Opción seleccionada: " + opcionSeleccionada);
 
 
-                }
-                catch(Exception e){
-                    lblEtiqueta.setText("");
+//                    v.setBackgroundColor(Color.parseColor("#BA3620"));
+
+//                    LinearLayout linearLayoutList = v.findViewById(R.id.LinearLayoutList);
+//                    linearLayoutList.setBackgroundColor(Color.parseColor("#BA3620"));
+
+//
+
+                } catch (Exception e) {
+                    lblEtiqueta.setVisibility(View.GONE);
                 }
 
                 //Alternativa 2:
@@ -114,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        lstOpciones2 = findViewById(R.id.LstOpciones2);
 
         //    Cabecera2
         View header2 = getLayoutInflater().inflate(R.layout.list2_header, null);
@@ -126,12 +152,16 @@ public class MainActivity extends AppCompatActivity {
         lstOpciones2.setAdapter(adaptador2);
 
 
-
     }
 
 
-
     class AdaptadorTitulares extends ArrayAdapter<Titular> {
+
+        Drawable[] img = {getContext().getDrawable(R.drawable.baseline_beach_access_24),
+                getContext().getDrawable(R.drawable.baseline_bed_24),
+                getContext().getDrawable(R.drawable.baseline_bedtime_24),
+                getContext().getDrawable(R.drawable.baseline_blender_24),
+                getContext().getDrawable(R.drawable.baseline_brush_24)};
 
         public AdaptadorTitulares(Context context, Titular[] datos) {
             super(context, R.layout.listitem_titular, datos);
@@ -141,13 +171,16 @@ public class MainActivity extends AppCompatActivity {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             View item = inflater.inflate(R.layout.listitem_titular, null);
 
+            item.setBackgroundColor(Color.parseColor("#FFE896"));
+
             TextView lblTitulo = item.findViewById(R.id.LblTitulo);
             lblTitulo.setText(datos[position].getTitulo());
+            lblTitulo.setCompoundDrawablesWithIntrinsicBounds(img[position % 5], null, null, null);
 
             TextView lblSubtitulo = item.findViewById(R.id.LblSubTitulo);
             lblSubtitulo.setText(datos[position].getSubtitulo());
 
-            return(item);
+            return (item);
         }
     }
 
@@ -167,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             TextView lblSubtitulo = item.findViewById(R.id.LblSubTitulo);
             lblSubtitulo.setText(datos2[position].getSubtitulo());
 
-            return(item);
+            return (item);
         }
     }
 }
