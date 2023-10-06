@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">T06Botones</string>
+
+    <string name="textViewMainTitle">T06Botones</string>
+
+    <!--  Buttons  -->
+    <string name="button">CLICK</string>
+
+    <string name="imageButton">Star</string>
+    <string name="imageButton2">Star no background</string>
+    <string name="imageButton3">Star with edit text</string>
+
+    <string name="editTextText">Texto de prueba</string>
+
+    <string name="buttonAccept">ACEPTAR</string>
+    <string name="buttonCancel">CANCELAR</string>
+</resources>
